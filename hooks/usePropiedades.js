@@ -6,16 +6,28 @@ const usePropiedades = (propiedades) => {
     const Propiedades = () => (
         <Grid>
         {propiedades.map(propiedad => (
-            <Card>
+            <Card
+            key={propiedad.id}
+            >
                 <img src={`http://localhost:1337${propiedad.imagen[0].url}`}/>
-                <div>
+                <Contenido>
                     <h3>{propiedad.nombre}</h3>
+                    <h3>{propiedad.descripcion}</h3>
                     <ul>
-                        <li>Ambientes: {propiedad.ambientes}</li>
-                        <li>Baños: {propiedad.banios}</li>
-                        <li>Descripcion: {propiedad.descripcion}</li>
+                        <li>
+                            <img src="assets/img/1.png"/>    
+                        </li>
+                        <li>
+                            <img src="assets/img/escala.png"/>
+                            <p>{propiedad.ambientes}</p>
+                        </li>
+                        <li>
+                            <img src="assets/img/banera.png"/>
+                            <p>{propiedad.banios}</p>
+                        </li>
+                        
                     </ul>
-                </div>
+                </Contenido>
             </Card>
         ))}
         </Grid>
@@ -47,4 +59,39 @@ background-color: #F5F5F5;
 img{
     max-width: 100%;
 }
+`;
+
+const Contenido = styled.div`
+padding: 1 rem;
+
+h3{
+    margin: 1rem 0 2rem 0;
+    font-size: 1.4rem;
+    font-family: 'Lato', sans-serif;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+ul li{
+    display: flex;
+
+}
+
+ul li img {
+    margin-right:1rem;
+    margin-left:1rem;
+    width:30px;
+    height: 30px;  
+}
+ul li p{
+    margin-right: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}
+
 `;
