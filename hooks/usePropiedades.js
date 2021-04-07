@@ -7,7 +7,7 @@ const usePropiedades = (propiedades) => {
         <Grid>
         {propiedades.map(propiedad => (
             <Card>
-                <img src={`http://localhost:1337/${propiedad.imagen[0].url}`}/>
+                <img src={`http://localhost:1337${propiedad.imagen[0].url}`}/>
                 <div>
                     <h3>{propiedad.nombre}</h3>
                     <ul>
